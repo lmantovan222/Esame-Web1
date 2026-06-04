@@ -69,25 +69,30 @@ export function createStoryCard({
 
     // TODO 1: Completare la card con i dati mancanti che vengonbo costruiti qui sopra.
     // Nel h3 story-card__title manca il 'title' della storia che deve essere un link che contiene il valore di 'threadHref'.
-    // Mancano tutti i meta dati nel div story-card__meta, ognuno dovrà esser contenutno in uno span con classe chip e una classe specifica
+    // Mancano tutti i meta dati nel div story-card__meta, ognuno dovrà esser contenuto in uno span con classe chip e una classe specifica
     // per il tipo di dato (es. scoreLabel -> chip--score, commentsLabel -> chip--comments, timeLabel -> chip--time, authorLink -> chip--author).
     // Infine manca il link alla fonte (sourceLink) da inserire dentro il div story-card__footer, prima del footnote con l'ID della storia.
     card.innerHTML = `
         <div class="story-card__top">
             <div class="story-card__heading">
                 <p class="story-card__eyebrow">#${sanitizeHTML(story.id)}</p>
-                <h3 class="story-card__title"></h3>
+                <h3 class="story-card__title"><a href="${threadHref}">${title}</a></h3>
             </div>
             ${actions}
         </div>
 
         <div class="story-card__meta">
 
+        <span class="chip--score">${scoreLabel}</span>
+         <span class="chip--comments">${commentsLabel}</span>
+          <span class="chip--time">${timeLabel}</span>
+           <span class="chip--author">${authorLink}</span>
+
         </div>
 
         <p class="story-card__excerpt">${excerpt}</p>
         <div class="story-card__footer">
-
+            ${sourceLink}
             <span class="story-card__footnote">ID ${sanitizeHTML(story.id)}</span>
         </div>
     `;
