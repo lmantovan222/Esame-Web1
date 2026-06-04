@@ -186,9 +186,14 @@ button {
 */
 .nav-link:hover,
 .nav-link.active {
+    transform: translateY(-2px); 
+    color: var(--text); 
+    border-color: var(--accent-2); 
 }
 
 .nav-link.active {
+    border-color: orange; 
+    box-shadow: 0 4px 10px rgba(255, 165, 0, 0.3); 
 }
 
 .hero {
@@ -626,20 +631,20 @@ a:focus-visible {
 
 .records-table th,
 .records-table td {
-
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     text-align: left;
     vertical-align: top;
 }
 
 .records-table th {
-
+    background-color: #0a0a0a; 
+    color: var(--accent-2); 
     font-size: 0.82rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     top: 0;
 }
-
-
 
 .records-row:hover td {
     background: rgba(255, 255, 255, 0.02);
