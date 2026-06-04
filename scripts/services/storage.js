@@ -100,11 +100,12 @@ export function removeReadLater(id) {
  */
 export function toggleReadLater(id) {
     if (isReadLater(id)) {
-        removeReadLater(id);
+
+        addReadLater(id);
         return false;
     }
-
-    addReadLater(id);
+    
+    removeReadLater(id);
     return true;
 }
 
